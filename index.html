@@ -1,13 +1,14 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AK_SHOP</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
@@ -15,15 +16,15 @@
     <header class="header">
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#" style="color: #4CAF50;">AK SHOP</a>
+                <a class="navbar-brand" href="#">AK SHOP</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavALL"
                     aria-controls="navbarNavALL" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavALL">
-                    <ul class="navbar-nav">
+                    <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="#hero">Home</a>
+                            <a class="nav-link" href="#hero">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#shop">Shop</a>
@@ -40,7 +41,7 @@
         </nav>
     </header>
 
-    <!-- Section Hero -->
+    <!-- Hero Section -->
     <section class="hero" id="hero">
         <div class="hero-content">
             <div class="hero-text">
@@ -54,44 +55,84 @@
         </div>
     </section>
 
-    <!-- Section About US -->
-    <section id="about" class="about">
-        <h2>About Us</h2>
-        <p>
-            At <strong>AK Shop</strong>, we specialize in providing top-quality products for your needs.
-            Our mission is to deliver exceptional value to our customers while ensuring top-notch service.
-        </p>
-        <p>
-            Whether you are looking for the perfect accessories for your beloved person, or everyday essentials,
-            AK Shop is your trusted partner in shopping satisfaction.
-        </p>
-        <p style="margin-top: 20px; font-style: italic;">
-            &copy; 2025 AK Shop. All rights reserved. Unauthorized reproduction or distribution of our content is
-            prohibited.
-        </p>
+    <!-- Shop Section -->
+    <section id="shop" class="shop">
+        <div class="shop-content">
+            <h2>Our Products</h2>
+            <div class="filters">
+                <select id="categoryFilter" class="form-select">
+                    <option value="">All Categories</option>
+                </select>
+                <div class="search-box">
+                    <input type="text" id="searchInput" class="form-control" placeholder="Search products...">
+                </div>
+            </div>
+            <div id="productsContainer" class="products-grid">
+                <!-- Products will be loaded here -->
+                <div class="loading">Loading products...</div>
+            </div>
+        </div>
+    </section>
+    
+    <!--  modal for product details -->
+    <div class="modal fade" id="productModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Product details will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- About Section -->
+
+    <section id=" about" class="about">
+                <div class="about-content">
+                    <h2>About Us</h2>
+                    <p>
+                        At <strong>AK Shop</strong>, we specialize in providing top-quality products for your needs.
+                        Our mission is to deliver exceptional value to our customers while ensuring top-notch service.
+                    </p>
+                    <p>
+                        Whether you are looking for the perfect accessories for your beloved person, or everyday
+                        essentials,
+                        AK Shop is your trusted partner in shopping satisfaction.
+                    </p>
+                </div>
     </section>
 
-    <!-- Section Contact US -->
-
+    <!-- Contact Section -->
     <section id="contact" class="contact">
-        <h2>Contact Us</h2>
-        <p>If you have any questions, feedback, or inquiries, feel free to reach out to us:</p>
-        <div class="contact-info">
-            <strong>Email:</strong> <a href="mailto:akjilani691995@gmail.com">akjilani691995@gmail.com</a><br>
-            <strong>Phone:</strong> <a href="tel:+8801521218674">01521218674</a><br>
-            <strong>Address:</strong> Mohakhali, Dhaka, Bangladesh
+        <div class="contact-content">
+            <h2>Contact Us</h2>
+            <p>If you have any questions, feedback, or inquiries, feel free to reach out to us:</p>
+            <div class="contact-info">
+                <p><i class="fas fa-envelope"></i> <strong>Email:</strong>
+                    <a href="mailto:akjilani691995@gmail.com">akjilani691995@gmail.com</a>
+                </p>
+                <p><i class="fas fa-phone"></i> <strong>Phone:</strong>
+                    <a href="tel:+8801521218674">01521218674</a>
+                </p>
+                <p><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong>
+                    Mohakhali, Dhaka, Bangladesh
+                </p>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-
-    <footer id="footer">
-        &copy; 2025 AK Shop. Powered by www.akjilani.com
+    <footer>
+        <p>&copy; 2025 AK Shop. Powered by <a href="http://www.akjilani.com" target="_blank">www.akjilani.com</a></p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>
