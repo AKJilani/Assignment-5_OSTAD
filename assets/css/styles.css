@@ -49,7 +49,7 @@ body {
 }
 
 .nav-link {
-    color: var(--white) !important;
+    color: var(--accent-green) !important;
     font-weight: 500;
     padding: 0.5rem 1rem !important;
     margin: 0 0.2rem;
@@ -57,7 +57,7 @@ body {
 }
 
 .nav-link:hover {
-    color: var(--accent-green) !important;
+    color: var(--white) !important;
     background-color: var(--light-gray);
     border-radius: 4px;
 }
@@ -88,8 +88,8 @@ body {
 }
 
 .hero-text h1 {
-    font-size: 3.5rem;
-    color: var(--white);
+    font-size: 4rem;
+    color: var(--accent-green);
     margin-bottom: 1.5rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
@@ -98,6 +98,14 @@ body {
     font-size: 1.2rem;
     color: var(--accent-green);
     margin-bottom: 2rem;
+}
+
+.hero-text a {
+    color:#000000 !important;
+}
+
+.hero-text a:hover {
+    color: var(--white) !important;
 }
 
 .hero-picture {
@@ -409,4 +417,100 @@ footer a:hover {
     .about p {
         font-size: 1rem;
     }
+}
+
+
+/* Cart Styles */
+.cart {
+    padding: 5rem 0;
+    background-color: var(--dark-gray);
+}
+
+.cart-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.cart h2 {
+    color: var(--accent-green);
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.cart-container {
+    background-color: var(--light-gray);
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid var(--accent-green);
+}
+
+.cart-item {
+    display: flex;
+    gap: 2rem;
+    padding: 1rem;
+    border-bottom: 1px solid var(--accent-green);
+    margin-bottom: 1rem;
+}
+
+.cart-item-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.cart-item-details {
+    flex: 1;
+}
+
+.cart-item-quantity {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.cart-quantity {
+    background-color: var(--dark-gray);
+    color: var(--white);
+    border: 1px solid var(--accent-green);
+    padding: 0.3rem;
+}
+
+.cart-total {
+    margin-top: 2rem;
+    text-align: right;
+    padding-top: 1rem;
+    border-top: 1px solid var(--accent-green);
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: var(--white);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+.btn-danger:hover {
+    background-color: #bd2130;
+}
+
+.checkout-btn {
+    margin-top: 1rem;
+}
+
+/* Product stock Details */
+.out-of-stock {
+    color: #dc3545;
+    font-weight: bold;
+    margin: 1rem 0;
+}
+
+.stock-info {
+    color: var(--accent-green);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
 }
