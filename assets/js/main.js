@@ -76,20 +76,20 @@ function displayProducts(products) {
                 <a class="product-details-link" style="text-decoration: underline; color: #4CAF50; cursor: pointer;">See Product Details</a>
                 <div class="product-price" style="font-size: 1em;">
                     ${discount > 0 ? `
-                        <span class="original-price">Old Price: $${product.price}</span><br>
-                        <span class="discount">Discount: -${discount}%</span><br>
-                        <span class="final-price">New Price: $${finalPrice}</span><br>` :
+                        <span class="original-price">Old Price : $${product.price}</span><br>
+                        <span class="discount">Discount : -${discount}%</span><br>
+                        <span class="final-price">New Price : $${finalPrice}</span><br>` :
                 `<span class="final-price">$${product.price}</span>`}
                 </div>
                 <div class="product-rating">
                     ${generateStarRating(product.rating)}
                     <span class="rating-value">${product.rating}</span>
-                    <div><small style="color: white;">Stock: ${availableStock} units</small></div>
+                    <div><small style="color: white;">Stock : ${availableStock} units</small></div>
                 </div>
                 ${availableStock > 0 ? `
                     <div class="product-action" style="margin-top: 10px;">
-                        <label for="quantity-${product.id}" class="quantity-label">Quantity:</label>
-                        <select id="quantity-${product.id}" class="quantity-select">
+                        <label for="quantity-${product.id}" class="quantity-label">Quantity :</label>
+                        <select style="border-radius: 5px;" id="quantity-${product.id}" class="quantity-select">
                             ${Array.from({ length: availableStock }, (_, i) =>
                     `<option value="${i + 1}">${i + 1}</option><br>`
                 ).join('')}

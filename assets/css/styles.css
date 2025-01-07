@@ -301,7 +301,14 @@ body {
 
 .product-meta {
     display: grid;
-    gap: 0.5rem;
+}
+
+.product-meta p {
+    margin-bottom: 3px;
+}
+
+.fa-star, .fa-star-half-alt {
+    color: gold;
 }
 
 .reviews-section {
