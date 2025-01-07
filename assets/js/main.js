@@ -91,7 +91,7 @@ function displayProducts(products) {
                         <label for="quantity-${product.id}" class="quantity-label">Quantity :</label>
                         <select style="border-radius: 5px;" id="quantity-${product.id}" class="quantity-select">
                             ${Array.from({ length: availableStock }, (_, i) =>
-                    `<option value="${i + 1}">${i + 1}</option><br>`
+                    `<option value="${i + 1}">${i + 1}</option>`
                 ).join('')}
                         </select>
                         <button class="add-to-cart btn btn-primary" data-product-id="${product.id}" style="margin-top: 20px; width: 100%;">Add to Cart</button>
