@@ -433,7 +433,7 @@ footer a:hover {
 }
 
 .cart-content {
-    max-width: 90%;
+    max-width: 60%;
     margin: 0 auto;
     padding: 0 2rem;
     min-height: calc(100vh - 260px);

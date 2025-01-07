@@ -95,6 +95,7 @@ function displayProducts(products) {
                 ).join('')}
                         </select>
                         <button class="add-to-cart btn btn-primary" data-product-id="${product.id}" style="margin-top: 20px; width: 100%;">Add to Cart</button>
+                        <button class="view-cart btn btn-success" style="margin-top: 10px; width: 100%; background-color: #4CAF50;"><a href="cart.html" style="text-decoration: none; color: white;">View Cart</a></button>
                     </div>
                 ` : `
                     <div class="product-action">
