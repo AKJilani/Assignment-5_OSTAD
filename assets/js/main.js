@@ -74,7 +74,7 @@ function displayProducts(products) {
             <div class="product-info">
                 <h3 class="product-title">${product.title}</h3>
                 <a class="product-details-link" style="text-decoration: underline; color: #4CAF50; cursor: pointer;">See Product Details</a>
-                <div class="product-price">
+                <div class="product-price" style="font-size: 1em;">
                     ${discount > 0 ? `
                         <span class="original-price">Old Price: $${product.price}</span><br>
                         <span class="discount">Discount: -${discount}%</span><br>
@@ -87,14 +87,14 @@ function displayProducts(products) {
                     <div><small style="color: white;">Stock: ${availableStock} units</small></div>
                 </div>
                 ${availableStock > 0 ? `
-                    <div class="product-action">
+                    <div class="product-action" style="margin-top: 10px;">
                         <label for="quantity-${product.id}" class="quantity-label">Quantity:</label>
                         <select id="quantity-${product.id}" class="quantity-select">
                             ${Array.from({ length: availableStock }, (_, i) =>
-                    `<option value="${i + 1}">${i + 1}</option>`
+                    `<option value="${i + 1}">${i + 1}</option><br>`
                 ).join('')}
                         </select>
-                        <button class="add-to-cart btn btn-primary" data-product-id="${product.id}">Add to Cart</button>
+                        <button class="add-to-cart btn btn-primary" data-product-id="${product.id}" style="margin-top: 20px; width: 100%;">Add to Cart</button>
                     </div>
                 ` : `
                     <div class="product-action">

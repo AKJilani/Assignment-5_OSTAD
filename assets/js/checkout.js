@@ -27,8 +27,8 @@ async function calculateTotals() {
     checkoutData.subtotal = checkoutData.cart.reduce((total, item) => 
         total + (parseFloat(item.price) * item.quantity), 0);
     
-    // Calculate tax (assuming 10% tax rate)
-    checkoutData.tax = checkoutData.subtotal * 0.10;
+    // Calculate tax (assuming 5% tax rate)
+    checkoutData.tax = checkoutData.subtotal * 0.05;
     
     // Calculate shipping (base rate + additional per item)
     checkoutData.shipping = 5 + (checkoutData.cart.reduce((total, item) => 
@@ -96,7 +96,7 @@ function renderPriceSummary() {
                 <span>$${checkoutData.subtotal.toFixed(2)}</span>
             </div>
             <div class="d-flex justify-content-between mb-2">
-                <span>Tax (10%):</span>
+                <span>VAT (5%):</span>
                 <span>$${checkoutData.tax.toFixed(2)}</span>
             </div>
             <div class="d-flex justify-content-between mb-3">
@@ -158,34 +158,6 @@ function renderCheckoutForm() {
                 </div>
             </div>
 
-            <!-- Payment Information -->
-            <div class="mb-4">
-                <h5 class="mb-3">Payment Information</h5>
-                <div class="row g-3">
-                    <div class="col-12">
-                        <div class="form-group">
-                            <label for="cardNumber" class="form-label">Card Number</label>
-                            <input type="text" class="form-control" id="cardNumber" name="cardNumber" 
-                                required pattern="[0-9]{16}" placeholder="1234 5678 9012 3456">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="expiryDate" class="form-label">Expiry Date</label>
-                            <input type="text" class="form-control" id="expiryDate" name="expiryDate" 
-                                required pattern="(0[1-9]|1[0-2])\/([0-9]{2})" placeholder="MM/YY">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="cvv" class="form-label">CVV</label>
-                            <input type="text" class="form-control" id="cvv" name="cvv" 
-                                required pattern="[0-9]{3,4}" placeholder="123">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             <button type="submit" class="btn btn-primary w-100 py-2">
                 Place Order - $${checkoutData.total.toFixed(2)}
             </button>
@@ -199,44 +171,6 @@ function setupEventListeners() {
     if (!form) return;
 
     form.addEventListener('submit', handleCheckoutSubmission);
-
-    // Add input validation listeners
-    const cardInput = form.querySelector('[name="cardNumber"]');
-    const expiryInput = form.querySelector('[name="expiryDate"]');
-    const cvvInput = form.querySelector('[name="cvv"]');
-
-    if (cardInput) {
-        cardInput.addEventListener('input', formatCardNumber);
-    }
-    if (expiryInput) {
-        expiryInput.addEventListener('input', formatExpiryDate);
-    }
-    if (cvvInput) {
-        cvvInput.addEventListener('input', formatCVV);
-    }
-}
-
-// Format card number input
-function formatCardNumber(e) {
-    let value = e.target.value.replace(/\D/g, '');
-    value = value.substring(0, 16);
-    value = value.replace(/(\d{4})(?=\d)/g, '$1 ');
-    e.target.value = value;
-}
-
-// Format expiry date input
-function formatExpiryDate(e) {
-    let value = e.target.value.replace(/\D/g, '');
-    if (value.length >= 2) {
-        value = value.substring(0, 2) + '/' + value.substring(2, 4);
-    }
-    e.target.value = value;
-}
-
-// Format CVV input
-function formatCVV(e) {
-    let value = e.target.value.replace(/\D/g, '');
-    e.target.value = value.substring(0, 4);
 }
 
 // Handle checkout submission
@@ -260,11 +194,6 @@ async function handleCheckoutSubmission(e) {
             tax: checkoutData.tax,
             shipping: checkoutData.shipping,
             total: checkoutData.total
-        },
-        payment: {
-            cardNumber: formData.get('cardNumber').replace(/\s/g, ''),
-            expiryDate: formData.get('expiryDate'),
-            cvv: formData.get('cvv')
         }
     };
 
